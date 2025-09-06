@@ -1,5 +1,5 @@
-defmodule Hotshot.Repo do
+defmodule ElixirCicd.Repo do
   use Ecto.Repo,
-    otp_app: :hotshot,
+    otp_app: :elixir_cicd,
     adapter: Ecto.Adapters.Postgres
 end

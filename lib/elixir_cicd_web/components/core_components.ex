@@ -1,4 +1,4 @@
-defmodule HotshotWeb.CoreComponents do
+defmodule ElixirCicdWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -27,7 +27,7 @@ defmodule HotshotWeb.CoreComponents do
 
   """
   use Phoenix.Component
-  use Gettext, backend: HotshotWeb.Gettext
+  use Gettext, backend: ElixirCicdWeb.Gettext
 
   @doc """
   Renders flash notices.
@@ -432,9 +432,9 @@ defmodule HotshotWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(HotshotWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ElixirCicdWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(HotshotWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ElixirCicdWeb.Gettext, "errors", msg, opts)
     end
   end
 

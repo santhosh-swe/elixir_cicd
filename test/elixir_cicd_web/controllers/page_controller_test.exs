@@ -1,5 +1,5 @@
-defmodule HotshotWeb.PageControllerTest do
-  use HotshotWeb.ConnCase
+defmodule ElixirCicdWeb.PageControllerTest do
+  use ElixirCicdWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

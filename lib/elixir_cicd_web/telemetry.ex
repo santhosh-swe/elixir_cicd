@@ -1,4 +1,4 @@
-defmodule HotshotWeb.Telemetry do
+defmodule ElixirCicdWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -87,7 +87,7 @@ defmodule HotshotWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {HotshotWeb, :count_users, []}
+      # {ElixirCicdWeb, :count_users, []}
     ]
   end
 end

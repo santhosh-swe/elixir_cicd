@@ -5,17 +5,17 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :hotshot, Hotshot.Repo,
+config :elixir_cicd, ElixirCicd.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "hotshot_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "elixir_cicd_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :hotshot, HotshotWeb.Endpoint,
+config :elixir_cicd, ElixirCicdWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "AfDsFMV9/AELlzURYyuSeTEOZJRw9dOXCxAszdah8VT9k/HAFijMNjGRw5Ah4IVh",
   server: false

@@ -1,4 +1,4 @@
-defmodule Hotshot.Application do
+defmodule ElixirCicd.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,19 +8,19 @@ defmodule Hotshot.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      HotshotWeb.Telemetry,
-      Hotshot.Repo,
-      {DNSCluster, query: Application.get_env(:hotshot, :dns_cluster_query) || :ignore},
-      {Phoenix.PubSub, name: Hotshot.PubSub},
-      # Start a worker by calling: Hotshot.Worker.start_link(arg)
-      # {Hotshot.Worker, arg},
+      ElixirCicdWeb.Telemetry,
+      ElixirCicd.Repo,
+      {DNSCluster, query: Application.get_env(:elixir_cicd, :dns_cluster_query) || :ignore},
+      {Phoenix.PubSub, name: ElixirCicd.PubSub},
+      # Start a worker by calling: ElixirCicd.Worker.start_link(arg)
+      # {ElixirCicd.Worker, arg},
       # Start to serve requests, typically the last entry
-      HotshotWeb.Endpoint
+      ElixirCicdWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Hotshot.Supervisor]
+    opts = [strategy: :one_for_one, name: ElixirCicd.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -28,7 +28,7 @@ defmodule Hotshot.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    HotshotWeb.Endpoint.config_change(changed, removed)
+    ElixirCicdWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

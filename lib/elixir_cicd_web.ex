@@ -1,12 +1,12 @@
-defmodule HotshotWeb do
+defmodule ElixirCicdWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use HotshotWeb, :controller
-      use HotshotWeb, :html
+      use ElixirCicdWeb, :controller
+      use ElixirCicdWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,7 +40,7 @@ defmodule HotshotWeb do
     quote do
       use Phoenix.Controller, formats: [:html, :json]
 
-      use Gettext, backend: HotshotWeb.Gettext
+      use Gettext, backend: ElixirCicdWeb.Gettext
 
       import Plug.Conn
 
@@ -80,16 +80,16 @@ defmodule HotshotWeb do
   defp html_helpers do
     quote do
       # Translation
-      use Gettext, backend: HotshotWeb.Gettext
+      use Gettext, backend: ElixirCicdWeb.Gettext
 
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components
-      import HotshotWeb.CoreComponents
+      import ElixirCicdWeb.CoreComponents
 
       # Common modules used in templates
       alias Phoenix.LiveView.JS
-      alias HotshotWeb.Layouts
+      alias ElixirCicdWeb.Layouts
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())
@@ -99,9 +99,9 @@ defmodule HotshotWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: HotshotWeb.Endpoint,
-        router: HotshotWeb.Router,
-        statics: HotshotWeb.static_paths()
+        endpoint: ElixirCicdWeb.Endpoint,
+        router: ElixirCicdWeb.Router,
+        statics: ElixirCicdWeb.static_paths()
     end
   end
 

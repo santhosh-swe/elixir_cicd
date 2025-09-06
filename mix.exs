@@ -1,9 +1,9 @@
-defmodule Hotshot.MixProject do
+defmodule ElixirCicd.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :hotshot,
+      app: :elixir_cicd,
       version: "0.1.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -20,7 +20,7 @@ defmodule Hotshot.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Hotshot.Application, []},
+      mod: {ElixirCicd.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -79,10 +79,10 @@ defmodule Hotshot.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["compile", "tailwind hotshot", "esbuild hotshot"],
+      "assets.build": ["compile", "tailwind elixir_cicd", "esbuild elixir_cicd"],
       "assets.deploy": [
-        "tailwind hotshot --minify",
-        "esbuild hotshot --minify",
+        "tailwind elixir_cicd --minify",
+        "esbuild elixir_cicd --minify",
         "phx.digest"
       ],
       precommit: ["compile --warning-as-errors", "deps.unlock --unused", "format", "test"]
