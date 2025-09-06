@@ -1,5 +1,20 @@
 # Hotshot
 
+A sample Phoenix application with GitHub Actions CI/CD setup.
+
+## GitHub Actions CI
+
+This project includes a GitHub Actions workflow (`.github/workflows/elixir.yaml`) that automatically runs tests on every pull request and push to the main branch. The workflow includes:
+
+* Elixir/OTP setup (Elixir 1.18.4, OTP 28.0.2)
+* PostgreSQL database service
+* Dependency and build caching for faster runs  
+* Code compilation with warnings as errors
+* Code formatting checks
+* Test execution
+
+## Getting Started
+
 To start your Phoenix server:
 
 * Run `mix setup` to install and setup dependencies
