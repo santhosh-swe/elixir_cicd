@@ -31,8 +31,3 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - Docs: https://hexdocs.pm/phoenix
 - Forum: https://elixirforum.com/c/phoenix-forum
 - Source: https://github.com/phoenixframework/phoenix
-
-
-
-git config --global user.name "Santhosh"
-git config --global user.email "santhoshreddyparapati@gmail.com"
